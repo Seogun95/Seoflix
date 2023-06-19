@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/Seoflix/static/js/main.5cf6e485.js",
+    "static/media/error.svg": "/Seoflix/static/media/error.c721cafefa7061e7d9cbc150c5da4306.svg",
+    "static/media/darkMode.png": "/Seoflix/static/media/darkMode.3b79872a873c61fd75dc.png",
+    "static/media/lightMode.png": "/Seoflix/static/media/lightMode.803b41fdeeb07d9db93d.png",
+    "static/media/logo_active.svg": "/Seoflix/static/media/logo_active.a7b3d1adc9df54a1a8a773f74e875c99.svg",
+    "static/media/logo.svg": "/Seoflix/static/media/logo.f56b9eaf6a5923cfbedb6a4518052d1e.svg",
+    "static/media/logo_hover.svg": "/Seoflix/static/media/logo_hover.16c0cc291b346f4091dd0d4ad7a057b5.svg",
+    "static/media/discord.svg": "/Seoflix/static/media/discord.70aaf1d79a90ed6e742d86987a08c24a.svg",
+    "static/media/netflix.svg": "/Seoflix/static/media/netflix.821fdd889c61d3605a9f918c2554075d.svg",
+    "static/media/scrollDown.svg": "/Seoflix/static/media/scrollDown.3e39a87a04677dd81d5b3effdc6b13e2.svg",
+    "static/media/scrollUp.svg": "/Seoflix/static/media/scrollUp.29d4b739bb9100038e7579cad05d51ca.svg",
+    "static/media/github.svg": "/Seoflix/static/media/github.795d4334f89425a76e78d981c3a5b5c7.svg",
+    "index.html": "/Seoflix/index.html",
+    "static/media/blog.svg": "/Seoflix/static/media/blog.f74bb9dd36e1ee04f4faca09cb3126ae.svg",
+    "static/media/dot.svg": "/Seoflix/static/media/dot.21b76ba158f2bdacf8a27163721f9dc4.svg",
+    "main.5cf6e485.js.map": "/Seoflix/static/js/main.5cf6e485.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5cf6e485.js"
+  ]
+}
