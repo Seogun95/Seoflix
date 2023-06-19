@@ -9,7 +9,10 @@ export const ScrollToBottom = () => {
   const location = useLocation();
 
   const handleScrollToBottom = throttle(() => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
   }, 500);
 
   const handleScroll = useCallback(() => {
