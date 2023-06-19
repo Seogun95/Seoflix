@@ -22,6 +22,8 @@ declare module 'styled-components' {
     bgColorDeep: string;
     bgColor: string;
     bgColor2: string;
+    headerBg: string;
+    headerBgTop: string;
     bgGradient: string;
     fontColor: string;
     fontColor2: string;
@@ -47,7 +49,6 @@ declare module 'styled-components' {
       drop_Hover: string;
       drop1: string;
       headerTop: string;
-      header: string;
     };
     scrollbar: {
       bg: string;

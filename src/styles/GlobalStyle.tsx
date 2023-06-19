@@ -41,14 +41,11 @@ button {
   display: inline-block;
   text-align: center;
   transition: .2s ease;
-  background-color: ${({ theme }) => theme.bgColorDeep};
   color: ${({ theme }) => theme.fontColor};
+  background-color: transparent;
   border: none;
-  padding: .5rem;
-  border-radius: .625rem;
   white-space: pre;
   cursor: pointer;
-
   &:disabled {
     cursor: not-allowed;
     opacity: .7;
@@ -132,9 +129,9 @@ textarea {
 }
 
 /* HashRoute smooth motion */
-* {
+/* * {
   scroll-behavior: smooth;
-}
+} */
 
 *:focus {
     outline: none !important;

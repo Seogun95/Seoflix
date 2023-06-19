@@ -87,6 +87,8 @@ export const Theme: DefaultTheme = {
   bgColorDeep: '#ebebeb',
   bgColor: '#ffffff',
   bgColor2: '#1e1e1e',
+  headerBg: 'rgba(255, 255, 255, 1)',
+  headerBgTop: 'rgba(255, 255, 255, 0)',
   bgGradient: 'linear-gradient(to left,#c0efff,#ffa8c3)',
   fontColor: '#191A23',
   fontColor2: '#E2E2E2',
@@ -113,7 +115,6 @@ export const Theme: DefaultTheme = {
     drop1: 'drop-shadow(.0625rem .0625rem .0625rem black)',
     headerTop:
       'linear-gradient(180deg,rgba(107, 107, 107, 0.4) 5%,transparent)',
-    header: 'linear-gradient(0deg, #ffffff 0%, #ffffff 100%)',
   },
   scrollbar: {
     bg: 'rgba(181,181,193,.8)',
@@ -133,6 +134,8 @@ export const DarkTheme: DefaultTheme = {
   bgColorDeep: '#2d2d2d',
   bgColor: '#1e1e1e',
   bgColor2: '#F8FAFB',
+  headerBg: 'rgb(0, 0, 0)',
+  headerBgTop: 'rgba(0, 0, 0, 0)',
   bgGradient: 'linear-gradient(to left,rgb(0 86 120), rgb(148 28 68))',
   fontColor: '#E2E2E2',
   fontColor2: '#191A23',
@@ -158,7 +161,6 @@ export const DarkTheme: DefaultTheme = {
     drop_Hover: 'drop-shadow(0 0.15rem 0.4rem rgba(0, 0, 0, 1))',
     drop1: 'drop-shadow(.0625rem .125rem .0625rem (rgba(0, 0, 0, .8))',
     headerTop: 'linear-gradient(180deg,rgba(0, 0, 0, 0.7) 10%,transparent)',
-    header: 'linear-gradient(0deg, #000000 0%, #000000 100%)',
   },
   scrollbar: {
     bg: 'rgba(86,88,105,1)',
