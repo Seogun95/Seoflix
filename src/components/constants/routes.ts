@@ -1,5 +1,5 @@
-import { HomeHeader } from 'components/header';
-import { Home } from 'pages';
+import { DramaHeader, HomeHeader, SearchHeader } from 'components/header';
+import { Home, Drama, Search } from 'pages';
 
 export interface RouteConfig {
   COMPONENT: () => JSX.Element;
@@ -18,6 +18,20 @@ export const ROUTE_MAP: RouteMap = Object.freeze({
     TITLE: '홈',
     NAV: true,
     ROUTE: true,
+  },
+  '/drama': {
+    COMPONENT: Drama,
+    SEO_HEADER: DramaHeader,
+    TITLE: '드라마',
+    NAV: true,
+    ROUTE: true,
+  },
+  '/search': {
+    COMPONENT: Search,
+    SEO_HEADER: SearchHeader,
+    TITLE: '검색',
+    NAV: false,
+    ROUTE: false,
   },
 });
 

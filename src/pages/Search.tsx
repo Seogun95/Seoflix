@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export function Home() {
+export function Search() {
   return (
     <Wrapper>
-      <span>home</span>
+      <span>Search</span>
     </Wrapper>
   );
 }
@@ -12,6 +12,5 @@ export function Home() {
 const Wrapper = styled.section`
   ${({ theme }) => theme.FlexRow};
   ${({ theme }) => theme.FlexCenter};
-  background-color: ${({ theme }) => theme.bgColorDeep};
-  height: 200vh;
+  height: 100%;
 `;
