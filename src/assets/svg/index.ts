@@ -5,6 +5,7 @@ export { ReactComponent as Github } from './github.svg';
 export { ReactComponent as Discord } from './discord.svg';
 export { ReactComponent as Blog } from './blog.svg';
 export { ReactComponent as Dot } from './dot.svg';
+export { default as netflix } from './logo/netflix.svg';
 export { default as logo } from './logo/logo.svg';
 export { default as logoHover } from './logo/logo_hover.svg';
 export { default as logoActive } from './logo/logo_active.svg';
