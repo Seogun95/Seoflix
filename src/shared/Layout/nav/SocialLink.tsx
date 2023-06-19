@@ -41,15 +41,4 @@ const Wrapper = styled.div<{ side: boolean }>`
 const SocialAnchor = styled(Link)`
   ${({ theme }) => theme.FlexRow};
   ${({ theme }) => theme.FlexCenter};
-  opacity: 0.8;
-  transition: 0.2s ease;
-  &:hover {
-    opacity: 1;
-  }
-  svg {
-    width: 1.25rem;
-    path {
-      fill: ${({ theme }) => theme.fontColor}fa;
-    }
-  }
 `;

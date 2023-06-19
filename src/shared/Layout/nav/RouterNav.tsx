@@ -57,10 +57,11 @@ const Wrapper = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   flex-grow: 1;
   display: none;
+  margin-left: 3.125rem;
   ${({ theme }) => theme.media.min.tablet`
     display: flex;
   `}
