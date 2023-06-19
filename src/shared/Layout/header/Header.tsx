@@ -1,27 +1,34 @@
-import { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { useLocation } from 'react-router-dom';
+import styled, { useTheme } from 'styled-components';
 import { HeaderLogo, HeaderNav } from 'shared/Layout';
+import {
+  Variants,
+  motion,
+  useAnimation,
+  useMotionValueEvent,
+  useScroll,
+} from 'framer-motion';
 
 export const Header = () => {
-  const location = useLocation();
-  const [scroll, setScroll] = useState<boolean>(false);
+  const { scrollYProgress } = useScroll();
+  const navAnimation = useAnimation();
+  const theme = useTheme();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
-      setScroll(scrollTop > 0);
-    };
+  const navVariants: Variants = {
+    top: {
+      backgroundColor: theme.headerBgTop,
+    },
+    scroll: {
+      backgroundColor: theme.headerBg,
+    },
+  };
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [location]);
+  useMotionValueEvent(scrollYProgress, 'change', y => {
+    if (y < 0.1) navAnimation.start('top');
+    else navAnimation.start('scroll');
+  });
 
   return (
-    <HeaderStyles isScrolled={scroll}>
+    <HeaderStyles variants={navVariants} initial="top" animate={navAnimation}>
       <HeaderContainer>
         <HeaderLogoContainer>
           <HeaderLogo />
@@ -32,16 +39,14 @@ export const Header = () => {
   );
 };
 
-const HeaderStyles = styled.header<{ isScrolled: boolean }>`
+const HeaderStyles = styled(motion.header)`
   width: 100%;
   height: 3.75rem;
   position: fixed;
   top: 0;
   left: 0;
-  transition: 0.3s ease;
   z-index: 99999;
-  background: ${({ isScrolled, theme }) =>
-    isScrolled ? theme.shadow.header : theme.shadow.headerTop};
+  background-image: ${({ theme }) => theme.shadow.headerTop};
 `;
 
 const HeaderContainer = styled.div`
