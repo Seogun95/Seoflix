@@ -67,6 +67,5 @@ const HeaderLogoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  max-width: 86rem;
   height: 100%;
 `;

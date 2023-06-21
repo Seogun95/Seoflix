@@ -19,19 +19,25 @@ const router = createBrowserRouter(
       children: [
         {
           element: <Layout />,
-          children: [
-            ...Object.entries(ROUTE_MAP).map(([PATH, DATA]) => {
-              return {
-                path: PATH,
-                element: (
-                  <>
-                    {createElement(DATA.COMPONENT)}
-                    {createElement(DATA.SEO_HEADER ?? DefaultSeoHeader)}
-                  </>
-                ),
-              };
-            }),
-          ],
+          children: Object.entries(ROUTE_MAP).map(([PATH, DATA]) => {
+            let children;
+            if (DATA.CHILDREN) {
+              children = DATA.CHILDREN.map(child => ({
+                path: child.PATH,
+                element: createElement(child.ELEMENT),
+              }));
+            }
+            return {
+              path: PATH,
+              element: (
+                <>
+                  {createElement(DATA.COMPONENT)}
+                  {createElement(DATA.SEO_HEADER ?? DefaultSeoHeader)}
+                </>
+              ),
+              children,
+            };
+          }),
         },
       ],
     },

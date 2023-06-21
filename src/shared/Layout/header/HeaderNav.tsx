@@ -7,13 +7,14 @@ import { SearchBtn } from '../nav/SearchBtn';
 
 export const HeaderNav = React.memo(() => {
   const location = useLocation();
+
+  const matchingRoute = ROUTER_LIST.find(
+    ([PATH, DATA]) => location.pathname.startsWith(PATH) && DATA.NAV,
+  );
+
   return (
     <Wrapper>
-      {ROUTER_LIST.map(([PATH, DATA]) => {
-        return PATH === location.pathname
-          ? DATA.NAV && <RouterNav key={PATH} />
-          : null;
-      })}
+      {matchingRoute && <RouterNav key={matchingRoute[0]} />}
       <SearchBtn />
       <DarkModeToggle side={false} />
       <SocialLink side={false} />

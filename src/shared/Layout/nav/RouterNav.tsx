@@ -33,9 +33,10 @@ export function RouterNav() {
       <Nav>
         {ROUTER_LIST.map(([PATH, DATA]) => {
           if (DATA.ROUTE) {
-            const isActive = PATH === pathname;
+            const isActive =
+              PATH === '/' ? pathname === PATH : pathname.startsWith(PATH);
             return (
-              <NavLink to={PATH} key={DATA.TITLE} active={`${isActive}`}>
+              <NavLink to={PATH} key={PATH} active={`${isActive}`}>
                 {isActive && <Highlight key={DATA.TITLE} layoutId="nav" />}
                 <NavTitle>{DATA.TITLE}</NavTitle>
               </NavLink>

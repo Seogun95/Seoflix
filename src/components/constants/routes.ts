@@ -1,15 +1,26 @@
-import { DramaHeader, HomeHeader, SearchHeader } from 'components/header';
-import { Home, Drama, Search } from 'pages';
+import {
+  DramaHeader,
+  HomeHeader,
+  MovieHeader,
+  SearchHeader,
+} from 'components/header';
+import { Home, Drama, Search, HomeModal } from 'pages';
 
-export interface RouteConfig {
+export interface IRouteConfig {
   COMPONENT: () => JSX.Element;
   SEO_HEADER?: () => JSX.Element;
   TITLE: string;
-  NAV: boolean;
-  ROUTE: boolean;
+  NAV?: boolean;
+  ROUTE?: boolean;
+  CHILDREN?: IChildrenElements[];
 }
 
-type RouteMap = Record<string, Readonly<RouteConfig>>;
+interface IChildrenElements {
+  PATH: string;
+  ELEMENT: () => JSX.Element;
+}
+
+type RouteMap = Record<string, Readonly<IRouteConfig>>;
 
 export const ROUTE_MAP: RouteMap = Object.freeze({
   '/': {
@@ -18,6 +29,14 @@ export const ROUTE_MAP: RouteMap = Object.freeze({
     TITLE: '홈',
     NAV: true,
     ROUTE: true,
+  },
+  '/movies': {
+    COMPONENT: Home,
+    SEO_HEADER: MovieHeader,
+    TITLE: '영화',
+    NAV: true,
+    ROUTE: true,
+    CHILDREN: [{ PATH: '/movies/:id', ELEMENT: HomeModal }],
   },
   '/drama': {
     COMPONENT: Drama,
