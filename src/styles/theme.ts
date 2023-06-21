@@ -40,7 +40,7 @@ const CursorActive = css`
 `;
 
 const DarkBlur = css`
-  background: ${props => props.theme.bgColorDeep}cc;
+  background-color: ${props => props.theme.bgColor}cc;
   backdrop-filter: blur(0.1125rem);
 `;
 
@@ -63,6 +63,10 @@ const TextEllipsisMultiline = css`
   overflow: hidden;
 `;
 
+const FontAwesome = css`
+  font-family: 'Font Awesome 5 Pro';
+`;
+
 const theme = {
   wh100,
   FlexCol,
@@ -75,6 +79,7 @@ const theme = {
   NoPaddingMargin,
   TextEllipsis,
   TextEllipsisMultiline,
+  FontAwesome,
 };
 
 export const Theme: DefaultTheme = {
@@ -87,6 +92,7 @@ export const Theme: DefaultTheme = {
   bgColorDeep: '#ebebeb',
   bgColor: '#ffffff',
   bgColor2: '#1e1e1e',
+  bgColor3: 'rgba(255, 255, 255, .5)',
   headerBg: 'rgba(255, 255, 255, 1)',
   headerBgTop: 'rgba(255, 255, 255, 0)',
   bgGradient: 'linear-gradient(to left,#c0efff,#ffa8c3)',
@@ -134,6 +140,7 @@ export const DarkTheme: DefaultTheme = {
   bgColorDeep: '#2d2d2d',
   bgColor: '#1e1e1e',
   bgColor2: '#F8FAFB',
+  bgColor3: 'rgba(0, 0, 0, .5)',
   headerBg: 'rgb(0, 0, 0)',
   headerBgTop: 'rgba(0, 0, 0, 0)',
   bgGradient: 'linear-gradient(to left,rgb(0 86 120), rgb(148 28 68))',

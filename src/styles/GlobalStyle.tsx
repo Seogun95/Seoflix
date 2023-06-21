@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
 html, body {
 width: 100%;
 overflow-x: hidden;
+height: 100vh;
 }
 
 body {
@@ -18,7 +19,8 @@ body {
 }
 
 #root {
-    height: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 code {
@@ -126,6 +128,7 @@ textarea {
   box-sizing: border-box;
   text-decoration-line: none;
   color: inherit;
+  font-family: 'Font Awesome 5 Pro';
 }
 
 /* HashRoute smooth motion */

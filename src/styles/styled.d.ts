@@ -15,6 +15,7 @@ declare module 'styled-components' {
     NoPaddingMargin;
     TextEllipsis;
     TextEllipsisMultiline;
+    FontAwesome;
     pointColor: string;
     subColor: string;
     accentColor: string;
@@ -22,6 +23,7 @@ declare module 'styled-components' {
     bgColorDeep: string;
     bgColor: string;
     bgColor2: string;
+    bgColor3: string;
     headerBg: string;
     headerBgTop: string;
     bgGradient: string;
