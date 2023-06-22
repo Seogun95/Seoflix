@@ -1,4 +1,3 @@
-import ModalPortal from 'components/ModalPortal';
 import { ROUTER_LIST } from 'components/constants/routes';
 import { AnimatePresence, Variants, motion } from 'framer-motion';
 import React, { useEffect } from 'react';
@@ -6,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { isSidebar } from 'atom';
-import { DarkModeToggle } from 'components';
+import { DarkModeToggle, ModalPortal } from 'components';
 import { HamburgerNav, SocialLink } from 'shared/Layout/nav';
 
 const hamburgerVariants: Variants = {
