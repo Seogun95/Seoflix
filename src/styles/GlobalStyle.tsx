@@ -42,7 +42,6 @@ a {
 button {
   display: inline-block;
   text-align: center;
-  transition: .2s ease;
   color: ${({ theme }) => theme.fontColor};
   background-color: transparent;
   border: none;

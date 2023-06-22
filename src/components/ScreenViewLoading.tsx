@@ -52,13 +52,12 @@ export const ScreenViewLoading = ({
 };
 
 const LoadingWrapper = styled.div`
-  position: fixed;
-  top: 0;
+  position: relative;
   ${({ theme }) => theme.FlexCol};
   ${({ theme }) => theme.FlexCenter};
-  width: calc(100vw + 11.7188rem);
+  min-height: 100vh;
   height: 100%;
-  background-color: transparent;
+  width: 100%;
 `;
 
 const Spinner = styled.div`
