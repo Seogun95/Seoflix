@@ -1,10 +1,10 @@
 import { useQuery } from 'react-query';
-import { getMovies } from 'utils';
+import { getMovieData } from 'utils';
 import { IGetMoviesResult } from 'types';
 
 export const useMultipleQuery = () => {
   const nowPlay = useQuery<IGetMoviesResult>(['nowPlay'], () =>
-    getMovies('ko-KR', 'now_playing'),
+    getMovieData(1),
   );
   return [nowPlay];
 };
