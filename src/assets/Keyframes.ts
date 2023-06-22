@@ -112,6 +112,18 @@ const lightHover = keyframes`
   }
 `;
 
+const loading = keyframes`
+	0% {
+			transform: translateX(-100%);
+		}
+		50% {
+			transform: translateX(100%);
+		}
+		100% {
+			transform: translate(200%);
+		}
+`;
+
 export const Keyframes = {
   darkImageOn,
   darkImageOff,
@@ -120,4 +132,5 @@ export const Keyframes = {
   sun,
   darkHover,
   lightHover,
+  loading,
 };
