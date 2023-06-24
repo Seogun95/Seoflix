@@ -26,6 +26,10 @@ export const getMovieData = async (page: number) => {
   return response.data;
 };
 
+export async function getNowPlayAll() {
+  return Promise.all([getMovieData(1), getMovieData(2), getMovieData(3)]);
+}
+
 export const getAllMovieData = async (tvId?: string, movieId?: string) => {
   const response = await axiosInstance.get(
     apiAllMovieDetailPath('ko-KR', tvId, movieId),
