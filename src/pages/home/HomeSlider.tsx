@@ -44,7 +44,7 @@ export const HomeSlider = () => {
   const increaseIndex = () => {
     if (allMovies && !state.leaving) {
       toggleLeaving();
-      const totalMovie = allMovies.results.length - 1;
+      const totalMovie = allMovies.length - 1;
       const lastPageNum = Math.floor(totalMovie / offset) - 1;
       setState(prevState => ({
         ...prevState,
@@ -56,7 +56,7 @@ export const HomeSlider = () => {
   const decreaseIndex = () => {
     if (allMovies && !state.leaving) {
       toggleLeaving();
-      const totalMovie = allMovies.results.length;
+      const totalMovie = allMovies.length;
       const lastPageNum = Math.floor(totalMovie / offset) - 1;
       setState(prevState => ({
         ...prevState,
@@ -118,28 +118,29 @@ export const HomeSlider = () => {
           gap={gap}
           first={`${state.index === 0}`}
         >
-          {allMovies?.results
-            .slice(1)
-            .slice(offset * state.index, offset * state.index + offset)
-            .map(movie => (
-              <ThumbnailContainer
-                layoutId={`${movie.id}`}
-                key={movie.id}
-                initial="start"
-                whileHover="hover"
-                variants={thumbnailVariants}
-                transition={{ type: 'ease' }}
-                onClick={() => handleSlideBoxClicked(movie.id)}
-              >
-                <Thumbnail
-                  src={apiMovieThumbnailPath(movie.backdrop_path)}
-                  alt={movie.title}
-                />
-                <Info variants={infoVariants}>
-                  <h4>{movie.title}</h4>
-                </Info>
-              </ThumbnailContainer>
-            ))}
+          {allMovies &&
+            allMovies
+              .slice(1)
+              .slice(offset * state.index, offset * state.index + offset)
+              .map(movie => (
+                <ThumbnailContainer
+                  layoutId={`${movie.id}`}
+                  key={movie.id}
+                  initial="start"
+                  whileHover="hover"
+                  variants={thumbnailVariants}
+                  transition={{ type: 'ease' }}
+                  onClick={() => handleSlideBoxClicked(movie.id)}
+                >
+                  <Thumbnail
+                    src={apiMovieThumbnailPath(movie.backdrop_path)}
+                    alt={movie.title}
+                  />
+                  <Info variants={infoVariants}>
+                    <h4>{movie.title}</h4>
+                  </Info>
+                </ThumbnailContainer>
+              ))}
         </Row>
       </AnimatePresence>
       {modalMatch ? <HomeModal /> : null}
