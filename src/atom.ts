@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 import { recoilPersist } from 'recoil-persist';
-import { IGetMoviesResult } from 'types';
+import { IMovies } from 'types';
 
 /* ======= 다크모드 Atom ======= */
 const { persistAtom: darkPersist } = recoilPersist({
@@ -20,7 +20,7 @@ export const isSidebar = atom<boolean>({
   default: false,
 });
 
-export const moviesData = atom<IGetMoviesResult | null>({
+export const moviesData = atom<IMovies[] | null>({
   key: 'movies',
   default: null,
 });
