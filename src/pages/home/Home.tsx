@@ -4,15 +4,20 @@ import styled from 'styled-components';
 import { useSetRecoilState } from 'recoil';
 import { moviesData } from 'atom';
 
-import { apiMovieThumbnailPath } from 'utils';
+import { apiMovieThumbnailPath, getNowPlayAll } from 'utils';
 import { HomeSlider } from 'pages/home';
-import { useMultipleQuery } from 'hooks/useMultipleQuery';
+
+import { useDataFetch } from '../../hooks/useMultipleQuery';
 
 export function Home() {
-  const [{ data: nowPlayData, isLoading: nowPlayIsLoading }] =
-    useMultipleQuery();
   const saveMoviesData = useSetRecoilState(moviesData);
 
+  const { isLoading: nowPlayIsLoading, datas: nowPlayData } = useDataFetch(
+    ['nowPlayingMovies'],
+    getNowPlayAll,
+  );
+
+  console.log(nowPlayData);
   useEffect(() => {
     if (!nowPlayIsLoading && nowPlayData) {
       saveMoviesData(nowPlayData);
@@ -27,12 +32,12 @@ export function Home() {
         <>
           <Banner
             bgPath={apiMovieThumbnailPath(
-              nowPlayData?.results[0].backdrop_path || '',
+              nowPlayData ? nowPlayData[0].backdrop_path : '',
             )}
           >
             <TitleContainer>
-              <Title>{nowPlayData?.results[0].title}</Title>
-              <Overview>{nowPlayData?.results[0].overview}</Overview>
+              <Title>{nowPlayData && nowPlayData[0].title}</Title>
+              <Overview>{nowPlayData && nowPlayData[0].overview}</Overview>
             </TitleContainer>
           </Banner>
           <SliderWrapper>
